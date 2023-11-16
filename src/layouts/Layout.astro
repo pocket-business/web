@@ -1,0 +1,71 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import { SEO } from "astro-seo";
+import Footer from "@components/footer.astro";
+import Navbar from "@components/navbar/navbar.astro";
+
+import "@fontsource-variable/inter/index.css";
+
+export interface Props {
+  title?: string;
+  footerMargin?: boolean;
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+
+const resolvedImageWithDomain = new URL(
+  "/opengraph.jpg",
+  Astro.site,
+).toString();
+
+const { title, footerMargin = true } = Astro.props;
+
+const makeTitle = title
+  ? title + " | " + "Pocket Business"
+  : "Pocket Business - The Mobile Business Operating System";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <SEO
+      title={makeTitle}
+      description="Pocket Business - The Mobile Business Operating System"
+      canonical={canonicalURL}
+      twitter={{
+        creator: "@djocubeit",
+        site: "@_pocketbusiness",
+        card: "summary_large_image",
+      }}
+      openGraph={{
+        basic: {
+          url: canonicalURL,
+          type: "website",
+          title: `Pocket Business - The Mobile Business Operating System`,
+          image: resolvedImageWithDomain,
+        },
+        image: {
+          alt: "Pocket Business",
+        },
+      }}
+    />
+    <style is:global>
+      /* Improve Page speed */
+      /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
+      img {
+        content-visibility: auto;
+      }
+    </style>
+    <ViewTransitions />
+  </head>
+  <body>
+    <Navbar />
+    <slot />
+    <Footer margin={footerMargin} />
+  </body>
+</html>

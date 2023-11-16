@@ -1,0 +1,132 @@
+---
+import Badge from "@components/ui/badge.astro";
+import { Picture } from "astro:assets";
+import FeatureImg1 from "../assets/design1.png";
+import FeatureImg2 from "../assets/design2.png";
+import { Icon } from "astro-icon";
+import Link from "@components/ui/link.astro";
+
+const { nomargin } = Astro.props;
+---
+
+<div
+  class:list={[
+    "max-w-4xl mx-auto flex flex-col items-center justify-center",
+    !nomargin && "mt-24",
+  ]}>
+  <!-- <Badge color="purple">BUILT ON FLUTTER</Badge> -->
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-4 text-center">
+    Natively compiled, multi-platform applications from a single codebase
+  </h2>
+  <p class="text-lg mt-4 text-slate-600 text-center [text-wrap:pretty]">
+    Pocket Business apps come with everything needed to start using them immediately.
+  </p>
+</div>
+
+<div class="grid md:grid-cols-2 py-10">
+  <div class="grid place-items-center">
+    <Picture
+      src={FeatureImg1}
+      alt="Feature Image"
+      formats={["avif", "webp"]}
+      loading="lazy"
+    />
+  </div>
+
+  <div class="grid place-items-center">
+    <div class="max-w-lg">
+      <Badge color="purple" class="-ml-px">FAST PERFORMANCE</Badge>
+      <h3 class="text-2xl font-medium mt-4 [text-wrap:balance]">
+        Lightning fast and super powerful
+      </h3>
+      <p class="mt-4 text-slate-600 [text-wrap:balance]">
+        Pocket Business apps are built with Flutter, an open source framework by Google for building beautiful, natively compiled, multi-platform applications from a single codebase. 
+        Flutter code compiles to ARM or Intel machine code as well as JavaScript, for fast performance on any device. 
+        With Flutter 3, Pocket Business builds apps on six different platforms from a single codebase.
+      </p>
+      <p class="mt-4 text-slate-600 [text-wrap:balance]">
+        As of 2022, Flutter is the most popular cross-platform mobile framework used by global developers, according to a 2022 developer <a href="https://www.statista.com/statistics/869224/worldwide-software-developer-working-hours/" target="_blank">survey</a>. 
+        Based on the survey, 46% of software developers used Flutter.
+      </p>
+
+      <ul class="grid mt-6 text-left gap-y-4">
+        <li class="flex items-center gap-3 text-neutral-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5" />
+
+          <span class="text-sm">Over 1 million apps on the Play Store are made with Flutter</span>
+        </li>
+
+        <li class="flex items-center gap-3 text-neutral-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5" />
+
+          <span class="text-sm">Google, BMW, Toyota, Groupon, Square and Ebay all use Flutter</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="grid md:grid-cols-2 py-10">
+  <div class="grid place-items-center pb-10 md:pb-0 md:order-2">
+    <Picture
+      src={FeatureImg2}
+      alt="Feature Image"
+      formats={["avif", "webp"]}
+      loading="lazy"
+    />
+  </div>
+
+  <div class="grid place-items-center">
+    <div class="max-w-lg">
+      <Badge color="purple" class="-ml-px">STABLE AND RELIABLE</Badge>
+      <h3 class="text-2xl font-medium mt-4 [text-wrap:balance]">
+        Trusted by many
+      </h3>
+      <p class="mt-4 text-slate-600 [text-wrap:balance]">
+        Flutter is supported and used by Google, trusted by well-known brands around the world, and maintained by a community of global developers. 
+        Take control of your codebase with automated testing, developer tooling, and everything else you need to build production-quality apps.</p>
+      <p class="mt-4 text-slate-600 [text-wrap:balance]">
+        Flutter has the potential to be the model platform for all apps. 
+        With its widgets, simplicity, and pixel-by-pixel-based mobile UI creation, this app development framework has taken the world by storm. 
+        Simply put, Flutter-based apps are attractive and feature-rich.
+      </p>
+      <ul class="grid mt-6 text-left gap-y-4">
+        <li class="flex items-center gap-3 text-neutral-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5" />
+
+          <span class="text-sm">Smart Audience Segmentation</span>
+        </li>
+        <li class="flex items-center gap-3 text-neutral-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5" />
+
+          <span class="text-sm">Predictive Campaign Performance</span>
+        </li>
+        <li class="flex items-center gap-3 text-neutral-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5" />
+
+          <span class="text-sm">Real-time Data Visualization</span>
+        </li>
+      </ul>
+      <div class="flex items-center gap-4 mt-6">
+        <!-- <Link href="#" size="sm" class="inline-flex items-center group gap-px">
+          <span>Start 14-day trial</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            class="w-4 h-4 mt-px group-hover:translate-x-1 transition-transform">
+            <path
+              fill-rule="evenodd"
+              d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </Link> -->
+        <!-- <a
+          href="#"
+          class="text-sm px-2 transition py-1 text-slate-600 hover:text-indigo-600 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500 focus-visible:outline-none focus-visible:shadow-outline-indigo rounded-full"
+          >Contact Sales</a
+        > -->
+      </div>
+    </div>
+  </div>
+</div>

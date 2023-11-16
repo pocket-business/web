@@ -1,0 +1,78 @@
+---
+// @ts-ignore
+import Badge from "@components/ui/badge.astro";
+import { Icon } from "astro-icon";
+
+const features = [
+  {
+    title: "Authentication",
+    description:
+      "Anonymous, email and passwword, phone and passwordless sessions, plus 3rd party OAuth with popular providers like Google, Microsoft, Facebook, Twitter and LinkedIn.",
+    icon: "fluent:shield-checkmark-24-regular",
+  },
+  {
+    title: "Localization",
+    description:
+      "Completely localized apps support multiple languages and locales, including right-to-left cultures like Arabic. Automatic translation via Google is even available.",
+    icon: "fluent:local-language-24-regular",
+  },
+  {
+    title: "Payments Integration",
+    description:
+      "Apps with payments enabled come with Stripe, Paypal, Square or in-app purchase functionality. Simply configure you preferred payment platform or method.",
+    icon: "fluent:wallet-24-regular",
+  },
+  {
+    title: "Local Device Biometrics",
+    description:
+      "Device authentication using Face and Fingerprint biometric security, and device PIN, pattern and password authentication are also supported.",
+    icon: "fluent:fingerprint-24-regular",
+  },
+  {
+    title: "Theming and Branding",
+    description:
+      "Full support for dynamic theming including system light, dark and auto modes, plus full app branding including logos, colours, fonts, spacing and sizing.",
+    icon: "fluent:color-background-24-regular",
+  },
+  {
+    title: "Managed Backend",
+    description:
+      "Pocket Business app templates are built on the esteemed Supabase backend-as-a-service. Pocket Business provides cost-effective hosting plans.",
+    icon: "fluent:database-link-24-regular",
+  },
+];
+---
+
+<!-- <div class="mt-16">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+    We have got more awesome <span class="text-indigo-600">features</span>
+  </h2>
+  <p class="text-lg mt-4 text-slate-600">
+    Use this section to highlight not so important features of your product.
+  </p>
+</div> -->
+<div class="mt-24 max-w-3xl mx-auto flex flex-col items-center justify-center">
+  <Badge color="purple">BIG FEATURES</Badge>
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-4 text-center">
+    Full-featured & ready to publish
+  </h2>
+  <p class="text-lg mt-4 text-slate-600 text-center [text-wrap:pretty]">
+    Pocket Business apps come with everything needed to start using them immediately.
+  </p>
+</div>
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-8 md:gap-16">
+  {
+    features.map((item) => (
+      <div class="flex flex-col gap-4 items-start group hover:bg-slate-50 hover:border-slate-100 border border-transparent rounded-lg transition-all md:-m-5 p-5">
+        <div class="mt-1 bg-indigo-50 border shadow shadow-indigo-100/50 border-indigo-100 transition-colors rounded-lg grid place-items-center  p-2 w-10 h-10 shrink-0">
+          <Icon class="text-indigo-500" name={item.icon} size="24" />
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>
